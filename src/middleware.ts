@@ -33,6 +33,7 @@ export async function middleware(request: NextRequest) {
         response.shop || "*.myshopify.com"
       } https://admin.shopify.com;`
     );
+    res.headers.set("x-shopify-domain", response.shop);
 
     // setting authorization token on request if id token was found in search params
     if (!request.headers.get("authorization")) {
