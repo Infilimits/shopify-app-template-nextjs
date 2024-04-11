@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "shopify": "shopify",
+    "deploy": "shopify app deploy",
     "setup": "drizzle-kit generate:pg",
     "migrate": "node ./migrate.mjs",
     "tunnel": "cloudflared tunnel --config .cloudflared/config.yml --url localhost:3000 run <tunnel-name>"
