@@ -1,6 +1,7 @@
 import ShopifyNavigationMenu from "@/components/ShopifyNavigationMenu";
 import AppBridgeProvider from "@/providers/AppBridgeProvider";
 import PolarisProvider from "@/providers/PolarisProvider";
+import NextTopLoader from "nextjs-toploader";
 
 export default function RootLayout({
   children,
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body>
         <PolarisProvider>
           <AppBridgeProvider>
+            <NextTopLoader />
             <ShopifyNavigationMenu />
             {children}
           </AppBridgeProvider>
