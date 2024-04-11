@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "setup": "drizzle-kit generate:pg",
-    "migrate": "node ./migrate.mjs"
+    "migrate": "node ./migrate.mjs",
+    "tunnel": "cloudflared tunnel --config .cloudflared/config.yml --url localhost:3000 run <tunnel-name>"
   },
   "dependencies": {
     "@shopify/polaris": "^13.0.0",
