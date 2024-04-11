@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import { getSession } from "./getSession";
 import { getShop, updateShopActivation } from "@/lib/shop.server";
 import { firstInstall } from "./firstInstall";
+import { registerWebhooks } from "@/lib/webhook.server";
 
 export async function initialPageLoad() {
   try {
@@ -28,8 +29,7 @@ export async function initialPageLoad() {
         // re installation
         await updateShopActivation(shop, true);
       }
-
-      // register webhooks here
+      await registerWebhooks(session);
     }
   } catch (err) {
     console.error("Initial Page load failed", err);
